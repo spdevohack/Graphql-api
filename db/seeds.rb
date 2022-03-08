@@ -8,33 +8,65 @@
 
 
 
-taylor = Artist.create!(
-  email: "taylor.swift@example.com",
-  first_name: "Taylor",
-  last_name: "Swift"
+# arjit = Artist.create!(
+#   email: "taylor.swift@example.com",
+#   first_name: "Taylor",
+#   last_name: "Swift"
+# )
+
+# Item.create!(
+#   [
+#     {
+#       title: "Red (Taylor's Version)",
+#       description: "Loving him is like driving a new Maserati down a dead-end street...",
+#       artist: taylor,
+#     },
+#     {
+#       title: "All Too Well (Taylor's Version)",
+#       description: "It was rare, I was there, I remember it all too well",
+#       artist: taylor,
+#     },
+#     {
+#       title: "We Are Never Ever Getting Back Together (Taylor's Version)",
+#       description: "You go talk to your friends, talk to my friends, talk to me",
+#       artist: taylor,
+#     },
+#     {
+#       title: "Begin Again (Taylor's Version)",
+#       description: "But on a Wednesday in a café, I watched it begin again",
+#       artist: taylor,
+#     }
+#   ]
+# )
+
+
+arjit = Artist.create!(
+  email: "arjit.singh@album.com",
+  first_name: "Arjit",
+  last_name: "Singh"
 )
 
 Item.create!(
   [
     {
-      title: "Red (Taylor's Version)",
+      title: "Muskraane (Arjit Singh Version)",
       description: "Loving him is like driving a new Maserati down a dead-end street...",
-      artist: taylor,
+      artist: arjit,
     },
     {
-      title: "All Too Well (Taylor's Version)",
+      title: "Mast Magan (Arjit Singh Version)",
       description: "It was rare, I was there, I remember it all too well",
-      artist: taylor,
+      artist: arjit,
     },
     {
-      title: "We Are Never Ever Getting Back Together (Taylor's Version)",
+      title: "Samjhawan (Arjit Singh Version)",
       description: "You go talk to your friends, talk to my friends, talk to me",
-      artist: taylor,
+      artist: arjit,
     },
     {
-      title: "Begin Again (Taylor's Version)",
+      title: "Soch naa sake (Arjit Singh Version)",
       description: "But on a Wednesday in a café, I watched it begin again",
-      artist: taylor,
+      artist: arjit,
     }
   ]
 )

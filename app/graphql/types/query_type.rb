@@ -13,5 +13,25 @@ module Types
     def test_field
       "Hello World!"
     end
+
+
+    field :items, 
+    [Types::ItemType],
+    null: false, 
+    description: "Return a list of items"
+
+    def items
+      Item.where(artist_id: 2).order(title: :desc)
+    end 
+
+
+    field :artists, 
+    [Types::ArtistType],
+    null: false, 
+    description: "Return a list of items"
+
+    def artists
+      Artist.all
+    end 
   end
 end
