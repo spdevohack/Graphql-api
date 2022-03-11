@@ -74,5 +74,18 @@ end
 
 # Gemfile
 gem 'graphql'
-# gem 'awesome_print'
+# gem 'search_object_graphql'
 gem "graphiql-rails", group: :development
+
+
+
+gem 'awesome_print'
+gem "byebug", "~> 11.1", :groups => [:development, :test]
+gem 'dotenv-rails'
+gem "letter_opener", group: :development
+
+# gem 'active_model_serializers'
+# gem 'jquery-rails'
+# gem 'jquery-ui-rails'
+gem 'devise'
+gem 'bcrypt'

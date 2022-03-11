@@ -10,7 +10,8 @@ class GraphqlController < ApplicationController
     operation_name = params[:operationName]
     context = {
       # Query context goes here, for example:
-      # current_user: current_user,
+      session: session,
+      current_employe: current_employe
     }
     result = ApiGraphqlSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
@@ -20,6 +21,18 @@ class GraphqlController < ApplicationController
   end
 
   private
+
+  def current_employe
+    # if we want to change the sign-in strategy, this is the place to do it
+    return unless session[:token]
+
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.secret_key_base.byteslice(0..31))
+    token = crypt.decrypt_and_verify session[:token]
+    employe_id = token.gsub('employe-id:', '').to_i
+    Employe.find(employe_id)
+  rescue ActiveSupport::MessageVerifier::InvalidSignature
+    nil
+  end
 
   # Handle variables in form data, JSON body, or a blank value
   def prepare_variables(variables_param)
@@ -48,3 +61,6 @@ class GraphqlController < ApplicationController
     render json: { errors: [{ message: e.message, backtrace: e.backtrace }], data: {} }, status: 500
   end
 end
+
+
+

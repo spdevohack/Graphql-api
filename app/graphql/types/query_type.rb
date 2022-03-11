@@ -30,8 +30,43 @@ module Types
     null: false, 
     description: "Return a list of items"
 
-    def artists
-      Artist.all
+    def artists()
+      Artist.all.order(id: :desc)
     end 
+
+    #Find Single Artist
+    field :artist, Types::ArtistType, null: false do 
+      argument :id, ID, required: true
+    end
+
+    def artist(id:)
+      Artist.find(id)
+    end
+
+
+    #Find Single Item
+    field :item, Types::ItemType, null: false do 
+      argument :id, ID, required: true
+    end
+
+    def item(id:)
+      Item.find(id)
+    end
+
+
+    field :links, [LinkType], null: false
+    
+
+    def links
+      Link.all.order("id")
+    end
+
+
+    field :employes, [EmployeType], null: false
+
+    def employes
+      Employe.all 
+    end
+
   end
 end
