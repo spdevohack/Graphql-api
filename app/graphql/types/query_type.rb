@@ -44,6 +44,16 @@ module Types
     end
 
 
+    # field :delete_artist, Types::ArtistType, null: false do 
+    #   argument :id, ID, required: true
+    # end
+
+    # def delete_artist(id)
+    #   debugger
+    #   artist = Artist.find(id)
+    #   artist.destroy
+    # end
+
     #Find Single Item
     field :item, Types::ItemType, null: false do 
       argument :id, ID, required: true

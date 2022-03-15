@@ -7,6 +7,9 @@ module Types
     field :create_employe, mutation: Mutations::CreateEmploye
     field :sign_in_employe, mutation: Mutations::SignInEmploye
     field :create_vote, mutation: Mutations::CreateVote
+    field :update_artist, mutation: Mutations::UpdateArtist
+    field :delete_artist, mutation: Mutations::DeleteArtist
+
 
 
   end
