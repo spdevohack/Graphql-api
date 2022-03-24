@@ -74,7 +74,7 @@ end
 
 # Gemfile
 gem 'graphql'
-# gem 'search_object_graphql'
+gem 'search_object_graphql', '0.3.1'
 gem "graphiql-rails", group: :development
 
 

@@ -44,16 +44,6 @@ module Types
     end
 
 
-    # field :delete_artist, Types::ArtistType, null: false do 
-    #   argument :id, ID, required: true
-    # end
-
-    # def delete_artist(id)
-    #   debugger
-    #   artist = Artist.find(id)
-    #   artist.destroy
-    # end
-
     #Find Single Item
     field :item, Types::ItemType, null: false do 
       argument :id, ID, required: true
@@ -68,7 +58,7 @@ module Types
     
 
     def links
-      Link.all.order("id")
+      context[:current_employe].links
     end
 
 
@@ -77,6 +67,21 @@ module Types
     def employes
       Employe.all 
     end
+
+
+    field :users, [Types::UserType], null: false
+    
+    def users
+      User.all
+    end
+
+    # field :all_links, resolver: Resolvers::LinksSearch
+
+    # field :_all_links_meta, QueryMetaType, null: false
+
+    # def _all_links_meta
+    #   Link.count
+    # end
 
   end
 end

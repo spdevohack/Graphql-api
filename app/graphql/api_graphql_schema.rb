@@ -1,6 +1,7 @@
 class ApiGraphqlSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
+  # resolver(Types::ResolverType)
 
   # For batch-loading (see https://graphql-ruby.org/dataloader/overview.html)
   use GraphQL::Dataloader
